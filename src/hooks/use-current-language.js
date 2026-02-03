@@ -19,8 +19,10 @@ export const useCurrentLanguage = ( languages ) => {
 		return null;
 	}
 
+	const currentLanguageSlug = currentPost.lang ?? pllEditorCurrentLanguageSlug;
+
 	const currentLanguage = languages.find( ( language ) => {
-		return language.slug === currentPost.lang;
+		return language.slug === currentLanguageSlug;
 	} );
 
 	return currentLanguage ? currentLanguage : null;
