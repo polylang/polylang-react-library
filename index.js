@@ -22,3 +22,9 @@ export { default as DefaultLangIcon } from './src/icons/default-lang';
 // Export middlewares
 export { default as filterPathMiddleware } from './src/middlewares/filter-path';
 export { default as editorsRequestsFilter } from './src/middlewares/editors-requests-filter';
+
+// Export hooks
+export { useCuratedLanguages } from './src/hooks/use-curated-languages';
+export { useCurrentLanguage } from './src/hooks/use-current-language';
+export { useLanguagesList } from './src/hooks/use-languages-list';
+export { useMemoizedSwitcherLabel } from './src/hooks/use-memoized-switcher-label';

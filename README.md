@@ -7,6 +7,7 @@ A unified package of React components, icons, and utilities for Polylang project
 - **React Components** - UI components like `LanguageDropdown` and `LanguageFlag`
 - **SVG Icons** - Complete icon library for Polylang Pro
 - **API Middlewares** - WordPress REST API filtering utilities
+- **React Hooks** - Custom hooks for language management and state handling
 
 > **Note**: This package distributes **source code** that is processed by consuming projects. No build step is needed.
 
@@ -86,6 +87,41 @@ editorsRequestsFilter( ( options ) => {
 } );
 ```
 
+### Hooks
+
+```javascript
+import {
+	useCuratedLanguages,
+	useCurrentLanguage,
+	useLanguagesList,
+	useMemoizedSwitcherLabel,
+} from '@wpsyntex/polylang-react-library';
+
+function LanguageSelector() {
+	// Fetch all available languages
+	const languages = useLanguagesList();
+	
+	// Get the current language from the editor
+	const currentLanguage = useCurrentLanguage( languages );
+	
+	// Curate languages with current language first
+	const curatedLanguages = useCuratedLanguages(
+		languages,
+		currentLanguage,
+		false
+	);
+	
+	// Create memoized label for display
+	const { text, flag } = useMemoizedSwitcherLabel(
+		currentLanguage,
+		true, // showFlags
+		true  // showNames
+	);
+	
+	return <div>{ flag }{ text }</div>;
+}
+```
+
 ## 🛠️ Development
 
 ### Install Dependencies
@@ -123,6 +159,12 @@ npm run format        # Format code
 - `editorsRequestsFilter` - Filter WordPress editor requests
 - `filterPathMiddleware` - Filter requests by path matching
 
+### Hooks
+- `useCuratedLanguages` - Curate languages list with current language first
+- `useCurrentLanguage` - Get the current language from the editor
+- `useLanguagesList` - Fetch the list of available languages
+- `useMemoizedSwitcherLabel` - Create memoized label for language switcher
+
 ## 📄 Requirements
 
 - Node.js >= 20.0.0
@@ -134,6 +176,8 @@ This package requires the following peer dependencies (provided by consuming pro
 
 - `@wordpress/api-fetch` >= 7.0.0
 - `@wordpress/components` >= 27.0.0
+- `@wordpress/data` >= 10.0.0
+- `@wordpress/editor` >= 14.0.0
 - `@wordpress/element` >= 6.0.0
 - `@wordpress/i18n` >= 5.0.0
 - `@wordpress/primitives` >= 4.0.0
