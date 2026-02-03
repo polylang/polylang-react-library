@@ -94,7 +94,6 @@ import {
 	useCuratedLanguages,
 	useCurrentLanguage,
 	useLanguagesList,
-	useMemoizedSwitcherLabel,
 } from '@wpsyntex/polylang-react-library';
 
 function LanguageSelector() {
@@ -111,34 +110,18 @@ function LanguageSelector() {
 		false
 	);
 	
-	// Create memoized label for display
-	const { text, flag } = useMemoizedSwitcherLabel(
-		currentLanguage,
-		true, // showFlags
-		true  // showNames
-	);
-	
-	return <div>{ flag }{ text }</div>;
+	return <div>{ currentLanguage?.name }</div>;
 }
 ```
 
 ## 🛠️ Development
 
-### Install Dependencies
+### Setup
 
 ```bash
 npm install
-```
-
-### Building
-
-The library uses Babel to transpile JSX and modern JavaScript:
-
-```bash
 npm run build         # Build src/ to build/
 ```
-
-The `prepare` script runs automatically on `npm install`, ensuring the library is always built when installed as a dependency.
 
 ### Linting
 
@@ -172,7 +155,6 @@ npm run lint:fix      # Fix automatically
 - `useCuratedLanguages` - Curate languages list with current language first
 - `useCurrentLanguage` - Get the current language from the editor
 - `useLanguagesList` - Fetch the list of available languages
-- `useMemoizedSwitcherLabel` - Create memoized label for language switcher
 
 ## 📄 Requirements
 
@@ -196,5 +178,3 @@ This package requires the following peer dependencies (provided by consuming pro
 ## 📄 License
 
 GPL-3.0+
-
-- [Polylang](https://polylang.pro/)

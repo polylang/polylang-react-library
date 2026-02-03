@@ -27,4 +27,3 @@ export { default as editorsRequestsFilter } from './middlewares/editors-requests
 export { useCuratedLanguages } from './hooks/use-curated-languages';
 export { useCurrentLanguage } from './hooks/use-current-language';
 export { useLanguagesList } from './hooks/use-languages-list';
-export { useMemoizedSwitcherLabel } from './hooks/use-memoized-switcher-label';
