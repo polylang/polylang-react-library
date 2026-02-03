@@ -1,0 +1,53 @@
+{
+  "name": "@wpsyntex/polylang-react-library",
+  "version": "1.0.0",
+  "description": "A collection of React components, icons, and utilities for Polylang-related projects. Distributes source code (no build required).",
+  "keywords": [
+    "gutenberg",
+    "react",
+    "wordpress",
+    "polylang",
+    "multilingual",
+    "components",
+    "icons"
+  ],
+  "homepage": "https://github.com/polylang/polylang-react-library#readme",
+  "bugs": {
+    "url": "https://github.com/polylang/polylang-react-library/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/polylang/polylang-react-library.git"
+  },
+  "license": "GPL-3.0+",
+  "author": "WP Syntex",
+  "main": "index.js",
+  "sideEffects": false,
+  "files": [
+    "index.js",
+    "src/"
+  ],
+  "scripts": {
+    "lint": "wp-scripts lint-js",
+    "lint:fix": "wp-scripts lint-js --fix"
+  },
+  "peerDependencies": {
+    "@wordpress/api-fetch": ">=7.0.0",
+    "@wordpress/components": ">=27.0.0",
+    "@wordpress/element": ">=6.0.0",
+    "@wordpress/i18n": ">=5.0.0",
+    "@wordpress/primitives": ">=4.0.0",
+    "lodash": ">=4.17.0",
+    "react": ">=17.0.0"
+  },
+  "devDependencies": {
+    "@wordpress/scripts": "^31.4.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  }
+}
