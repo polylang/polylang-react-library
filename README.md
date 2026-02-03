@@ -9,8 +9,6 @@ A unified package of React components, icons, and utilities for Polylang project
 - **API Middlewares** - WordPress REST API filtering utilities
 - **React Hooks** - Custom hooks for language management and state handling
 
-> **Note**: This package distributes **source code** that is processed by consuming projects. No build step is needed.
-
 ## 🚀 Installation
 
 ### From GitHub
@@ -20,6 +18,8 @@ A unified package of React components, icons, and utilities for Polylang project
 ```bash
 npm install github:polylang/polylang-react-library
 ```
+
+The package automatically builds during installation via the `prepare` script. The source code in `src/` is transpiled to `build/` using Babel with WordPress presets.
 
 ## 💻 Usage
 
@@ -130,12 +130,21 @@ function LanguageSelector() {
 npm install
 ```
 
+### Building
+
+The library uses Babel to transpile JSX and modern JavaScript:
+
+```bash
+npm run build         # Build src/ to build/
+```
+
+The `prepare` script runs automatically on `npm install`, ensuring the library is always built when installed as a dependency.
+
 ### Linting
 
 ```bash
 npm run lint          # Check code
 npm run lint:fix      # Fix automatically
-npm run format        # Format code
 ```
 
 ## 📋 Available Exports
