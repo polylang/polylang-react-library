@@ -4,10 +4,6 @@
  * A collection of React components, icons, and utilities for Polylang projects.
  */
 
-// Export components
-export { LanguageDropdown } from './components/language-dropdown';
-export { default as LanguageFlag } from './components/language-flag';
-
 // Export icons
 export { default as duplication } from './icons/duplication';
 export { default as pencil } from './icons/pencil';
@@ -17,7 +13,6 @@ export { default as translation } from './icons/translation';
 export { default as trash } from './icons/trash';
 export { default as star } from './icons/star';
 export { default as SubmenuIcon } from './icons/submenu';
-export { default as DefaultLangIcon } from './icons/default-lang';
 
 // Export middlewares
 export { default as filterPathMiddleware } from './middlewares/filter-path';
