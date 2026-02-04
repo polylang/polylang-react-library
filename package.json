@@ -36,17 +36,15 @@
     "@babel/cli": "^7.26.5",
     "@wordpress/babel-preset-default": "^8.10"
   },
-  "peerDependencies": {
-    "@wordpress/api-fetch": ">=7.0.0",
-    "@wordpress/components": ">=27.0.0",
-    "@wordpress/element": ">=6.0.0",
-    "@wordpress/i18n": ">=5.0.0",
-    "@wordpress/primitives": ">=4.0.0",
-    "@wordpress/data": ">=10.0.0",
-    "@wordpress/editor": ">=14.0.0",
-    "lodash": ">=4.17.0",
-    "react": ">=17.0.0"
-  },
+	"peerDependencies": {
+		"@wordpress/api-fetch": ">=7.0.0",
+		"@wordpress/data": ">=10.0.0",
+		"@wordpress/editor": ">=14.0.0",
+		"@wordpress/element": ">=6.0.0",
+		"@wordpress/primitives": ">=4.0.0",
+		"lodash": ">=4.17.0",
+		"react": ">=17.0.0"
+	},
   "devDependencies": {
     "@wordpress/scripts": "^31.4.0"
   },
