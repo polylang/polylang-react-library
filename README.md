@@ -10,15 +10,19 @@ A unified package of icons, hooks, and utilities for Polylang projects, optimize
 
 ## 🚀 Installation
 
-### From GitHub
+```bash
+npm install @wpsyntex/polylang-react-library
+```
 
-> The package is not yet published to npm.
+The published package ships pre-transpiled JavaScript in `build/` (JSX compiled with Babel and `@wordpress/babel-preset-default`). WordPress and React packages remain peer dependencies so consumers can externalize them (e.g. via webpack `externals` to `wp.*` / `React`).
+
+### From GitHub (development)
 
 ```bash
 npm install github:polylang/polylang-react-library
 ```
 
-The package automatically builds during installation via the `prepare` script. The source code in `src/` is transpiled to `build/` using Babel with WordPress presets.
+When installing from GitHub, the `prepare` script builds `src/` to `build/`. That requires a local clone with `devDependencies` installed (`npm install` in this repository); prefer the npm package for consumers.
 
 ## 💻 Usage
 

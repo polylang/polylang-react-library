@@ -22,30 +22,33 @@
   "license": "GPL-3.0+",
   "author": "WP Syntex",
   "main": "build/index.js",
+  "exports": {
+    ".": "./build/index.js"
+  },
   "sideEffects": false,
   "files": [
-    "build/"
+    "build"
   ],
   "scripts": {
     "build": "babel src --out-dir build --copy-files",
+    "clean": "rm -rf build",
+    "prepublishOnly": "npm run clean && npm run build",
     "prepare": "npm run build",
     "lint": "wp-scripts lint-js",
     "lint:fix": "wp-scripts lint-js --fix"
   },
-  "dependencies": {
-    "@babel/cli": "^7.26.5",
-    "@wordpress/babel-preset-default": "^8.10"
+  "peerDependencies": {
+    "@wordpress/api-fetch": ">=7.0.0",
+    "@wordpress/data": ">=10.0.0",
+    "@wordpress/editor": ">=14.0.0",
+    "@wordpress/element": ">=6.0.0",
+    "@wordpress/primitives": ">=4.0.0",
+    "lodash": ">=4.17.0",
+    "react": ">=17.0.0"
   },
-	"peerDependencies": {
-		"@wordpress/api-fetch": ">=7.0.0",
-		"@wordpress/data": ">=10.0.0",
-		"@wordpress/editor": ">=14.0.0",
-		"@wordpress/element": ">=6.0.0",
-		"@wordpress/primitives": ">=4.0.0",
-		"lodash": ">=4.17.0",
-		"react": ">=17.0.0"
-	},
   "devDependencies": {
+    "@babel/cli": "^7.26.5",
+    "@wordpress/babel-preset-default": "^8.10",
     "@wordpress/scripts": "^31.4.0"
   },
   "publishConfig": {
