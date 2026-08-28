@@ -2,8 +2,6 @@
  * WordPress dependencies
  */
 import { useSelect } from '@wordpress/data';
-// This package is not found in `@wordpress/scripts` like others (peer dependency).
-// eslint-disable-next-line import/no-unresolved
 import { store as coreEditorStore } from '@wordpress/editor';
 
 /**
@@ -22,7 +20,7 @@ export const useCurrentLanguage = ( languages ) => {
 	}
 
 	const currentLanguageSlug =
-		currentPost.lang ?? pllEditorCurrentLanguageSlug; // eslint-disable-line no-undef
+		currentPost.lang ?? pllEditorCurrentLanguageSlug;
 
 	const currentLanguage = languages.find( ( language ) => {
 		return language.slug === currentLanguageSlug;

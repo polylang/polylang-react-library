@@ -2,6 +2,8 @@
   "name": "@wpsyntex/polylang-react-library",
   "version": "1.0.0",
   "description": "A collection of React components, icons, and utilities for Polylang-related projects.",
+  "author": "WP Syntex",
+  "license": "GPL-3.0+",
   "keywords": [
     "gutenberg",
     "react",
@@ -12,30 +14,34 @@
     "icons"
   ],
   "homepage": "https://github.com/polylang/polylang-react-library#readme",
-  "bugs": {
-    "url": "https://github.com/polylang/polylang-react-library/issues"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/polylang/polylang-react-library.git"
   },
-  "license": "GPL-3.0+",
-  "author": "WP Syntex",
+  "bugs": {
+    "url": "https://github.com/polylang/polylang-react-library/issues"
+  },
+  "engines": {
+    "node": ">=22.0.0",
+    "npm": ">=10.0.0"
+  },
+  "files": [
+    "build"
+  ],
   "main": "build/index.js",
   "exports": {
     ".": "./build/index.js"
   },
   "sideEffects": false,
-  "files": [
-    "build"
-  ],
-  "scripts": {
-    "build": "babel src --out-dir build --copy-files",
-    "clean": "rm -rf build",
-    "prepublishOnly": "npm run clean && npm run build",
-    "prepare": "npm run build",
-    "lint": "wp-scripts lint-js",
-    "lint:fix": "wp-scripts lint-js --fix"
+  "devDependencies": {
+    "@babel/cli": "^7.26.5",
+    "@babel/core": "^7.26.5",
+    "@wordpress/babel-preset-default": "^8.10",
+    "@wordpress/eslint-plugin": "^25.8.0",
+    "@wordpress/npm-package-json-lint-config": "^5.53.0",
+    "eslint": "^9.39.5",
+    "npm-package-json-lint": "^11.0.0",
+    "prettier": "npm:wp-prettier@3.0.3"
   },
   "peerDependencies": {
     "@wordpress/api-fetch": ">=7.0.0",
@@ -46,16 +52,16 @@
     "lodash": ">=4.17.0",
     "react": ">=17.0.0"
   },
-  "devDependencies": {
-    "@babel/cli": "^7.26.5",
-    "@wordpress/babel-preset-default": "^8.10",
-    "@wordpress/scripts": "^34.0.0"
-  },
   "publishConfig": {
     "access": "public"
   },
-  "engines": {
-    "node": ">=18.0.0",
-    "npm": ">=8.0.0"
+  "scripts": {
+    "build": "babel src --out-dir build --copy-files",
+    "clean": "rm -rf build",
+    "prepublishOnly": "npm run clean && npm run build",
+    "prepare": "npm run build",
+    "lint": "eslint",
+    "lint:fix": "eslint --fix",
+    "lint:pkg-json": "npmPkgJsonLint ./package.json"
   }
 }

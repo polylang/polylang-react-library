@@ -22,8 +22,10 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        # Peer dependencies must be installed so ESLint can resolve @wordpress/* imports.
         run: npm ci
 
       - name: Run ESLint
         run: npm run lint
+
+      - name: Lint package.json
+        run: npm run lint:pkg-json
