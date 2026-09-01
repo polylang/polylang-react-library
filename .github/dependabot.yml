@@ -1,6 +1,8 @@
 # Same schedule as other Polylang packages; Dependabot does not sync versions between repos.
 # allow — if a package does not match, Dependabot does not open a version PR or a security PR for it.
 # groups.build-tools — among packages that already passed allow, matching ones are collapsed into one PR instead of many.
+# ignore — skip semver-major bumps for @babel/* until @wordpress/babel-preset-default and
+# @wordpress/eslint-plugin support Babel 8.
 #
 # This library has no npm `dependencies`. Shipped JS is compiled by Babel (`npm run build`).
 # Peer dependency ranges are consumer contracts and are not on the weekly cadence.
@@ -13,6 +15,11 @@ updates:
       day: monday
       time: "07:00"
       timezone: Europe/Paris
+    ignore:
+      - dependency-name: "@babel/cli"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "@babel/core"
+        update-types: ["version-update:semver-major"]
     allow:
       - dependency-type: production
       - dependency-name: "@babel/cli"
