@@ -7,6 +7,12 @@ on:
       - master
   workflow_call:
 
+
+# Cancel superseded PR runs; master commits use unique SHAs so they still all complete.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.sha }}
+  cancel-in-progress: true
+
 jobs:
   lint:
     runs-on: ubuntu-latest
